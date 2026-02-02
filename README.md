@@ -1,8 +1,14 @@
 # HW4
 ## Devlog
-Write your Devlog here!
+Kai Castilliano, he/him
+
+Through my understanding, the model-view-control pattern goes hand in hand with the way events and systems are being utilized within the game's code.  I believe that in terms of my classes, the interactions made in the player class/points class play as the controller aspect of the model, and the view part of the Game controller class (which also carries the singleton) is used for the view aspect. The Game controller’s script carries the locator/singleton “Instance”, which is used to store all of the events  actions, and UI’s logic. There are two specific events made in the game's logic: (“ On Score Point”) and ( “On Player died” ) the score point event is being invoked in the point scripts’ OnTriggerEnter method, which establishes when the player passes through the pipe it will do the logic established in the Game controllers line of code stating that OnScorePoint += Addpoint. In the Addpoint method, it establishes that when the player scores a point it will cause the UI’s score count to trigger and add up one integer. With the second event it is created and invoked in the OnCollisionEnter method of  the player class (OnPlayerDied). The collision method establishes that if  the player collides with the pipe it will play the sound and the definition of its event (located in the Game Controller). The Game Controller states that “OnPlayerDied += GameOver” this means that the event also carries logic from the game over method so combining the two- when the player collides with the pipe not only will it play the hitsound but now the gameover UI will present on the screen and the games time will freeze. With that being said, the player class and points class contribute to the control aspect of the pattern considering that they are components of actual game objects in the game that determine which event is enabled and triggered in the game. For example, in order for the logic of the ScorePoint to happen it can only be triggered if the player passes through the pipe- otherwise the OnPlayerDied event will be triggered and the game controller will send that logic as a result. The Gamecontroller class plays as a spectator and watches the gameplay for certain things to occur before processing them and sending back output in response. 
+
 
 ## Open-Source Assets
 If you added any other assets, list them here!
 - [Brackey's Platformer Bundle](https://brackeysgames.itch.io/brackeys-platformer-bundle) - sound effects
 - [2D pixel art seagull sprites](https://elthen.itch.io/2d-pixel-art-seagull-sprites) - seagull sprites
+- [Game Sound Effects](https://sfxr.me/)
+- [Crow/Bird Sprites](https://carysaurus.itch.io/bird-sprites)
+- [Pipe sprite sheet ](https://wwolf-w.itch.io/industrial-pipe-platformer-tileset)
